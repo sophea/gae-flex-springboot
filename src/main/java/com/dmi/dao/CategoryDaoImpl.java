@@ -21,11 +21,6 @@ public class CategoryDaoImpl extends DaoGaeImpl<DCategory> {
     }
 
 
-    public void copyDomainToEntity(DCategory from, com.google.cloud.datastore.Entity.Builder to) {
-        to.set(COLUMN_NAME_NAME, from.getName());
-        to.set(COLUMN_NAME_DESCRIPTION, from.getDescription());
-        to.set(DCategory.COLUMN_NAME_CREATEDDATE, com.google.cloud.datastore.DateTime.copyFrom(new Date()));
-    }
     @Override
     public void copyEntityToDomain(com.google.cloud.datastore.Entity from, DCategory to) {
         if (from.contains(COLUMN_NAME_NAME)) {

@@ -50,7 +50,7 @@ public abstract class DaoGaeImpl<D extends AbstractLongEntity> {
             key = keyFactory.newKey(domain.getId());
         }
         
-        Builder<IncompleteKey> builder = FullEntity.newBuilder(key);
+        Builder builder = FullEntity.newBuilder(key);
         
         //convert domain to Entity
         copyDomainToEntity(domain, builder);

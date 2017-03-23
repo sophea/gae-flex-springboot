@@ -58,8 +58,8 @@
   <classpathentry kind="var" path="M2_REPO/org/skyscreamer/jsonassert/1.3.0/jsonassert-1.3.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/json/json/20090211/json-20090211.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/spring-test/4.3.6.RELEASE/spring-test-4.3.6.RELEASE.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/google/cloud/google-cloud-datastore/0.9.4-beta/google-cloud-datastore-0.9.4-beta.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/google/cloud/google-cloud-core/0.9.4-alpha/google-cloud-core-0.9.4-alpha.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/google/cloud/google-cloud-datastore/0.10.0-beta/google-cloud-datastore-0.10.0-beta.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/google/cloud/google-cloud-core/0.10.0-alpha/google-cloud-core-0.10.0-alpha.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/google/auth/google-auth-library-credentials/0.6.0/google-auth-library-credentials-0.6.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/google/auth/google-auth-library-oauth2-http/0.6.0/google-auth-library-oauth2-http-0.6.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/google/http-client/google-http-client/1.21.0/google-http-client-1.21.0.jar"/>
@@ -88,7 +88,7 @@
   <classpathentry kind="var" path="M2_REPO/io/grpc/grpc-core/1.0.3/grpc-core-1.0.3.jar"/>
   <classpathentry kind="var" path="M2_REPO/io/grpc/grpc-context/1.0.3/grpc-context-1.0.3.jar"/>
   <classpathentry kind="var" path="M2_REPO/io/grpc/grpc-protobuf-lite/1.0.3/grpc-protobuf-lite-1.0.3.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/google/api/gax/0.1.4/gax-0.1.4.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/google/api/gax/0.4.0/gax-0.4.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/io/grpc/grpc-stub/1.0.3/grpc-stub-1.0.3.jar"/>
   <classpathentry kind="var" path="M2_REPO/io/grpc/grpc-netty/1.0.3/grpc-netty-1.0.3.jar"/>
   <classpathentry kind="var" path="M2_REPO/io/netty/netty-handler-proxy/4.1.6.Final/netty-handler-proxy-4.1.6.Final.jar"/>

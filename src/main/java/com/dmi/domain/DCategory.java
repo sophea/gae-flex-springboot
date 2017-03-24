@@ -1,6 +1,5 @@
 package com.dmi.domain;
 
-import com.dmi.cloud.datastore.AbstractLongEntity;
 
 
 public class DCategory extends AbstractLongEntity {

@@ -1,47 +1,55 @@
 package com.dmi.service;
 
-import java.util.Collection;
+import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dmi.dao.CategoryDaoImpl;
+import com.dmi.dao.CategoryDao;
 import com.dmi.domain.DCategory;
 import com.dmi.domain.ResponseList;
 
-@Service("categoryService")
-public class CategoryServiceImpl {
-
+@Service("categorySevice")
+public class CategoryServiceImpl implements CategoryService {
+    private static final Logger logger = LoggerFactory.getLogger(CategoryServiceImpl.class);
+    
     @Autowired
-    private CategoryDaoImpl categoryDao;
+    private CategoryDao dao;
     
-    public Collection<DCategory> getAll() {
-        return categoryDao.findByFields(null);
+    @Override
+    public List<DCategory> list() {
+        return dao.list();
+    }
+
+    @Override
+    public DCategory get(Long id) {
+        return dao.get(id);
+    }
+
+    @Override
+    public DCategory create(DCategory dCategory) {
+        return dao.create(dCategory);
+    }
+
+    @Override
+    public Long delete(Long id) {
+        return dao.delete(id);
+    }
+
+    @Override
+    public DCategory update(Long id, DCategory dCategory) {
+        
+        if (dao.get(id) == null) {
+            return null;
+        }
+        dCategory.setId(id);
+        return dao.update(dCategory);
     }
     
-    public Collection<DCategory> findByFields(DCategory domain) {
-        return categoryDao.findByFields(domain);
-    }
-    
-    public ResponseList<DCategory> findPage(String cursor, int pageSize) {
-        return categoryDao.findByPage(cursor, pageSize);
-    }
-    
-    public DCategory findById(Long id) {
-        return categoryDao.findById(id);
-    }
-    
-    public DCategory create(DCategory category) {
-        //create new datastore
-       return categoryDao.add(category);
-    }
-    
-    public DCategory update(DCategory category) {
-        categoryDao.update(category);
-        return category;
-    }
-    
-    public void remove(long id) {
-        categoryDao.delete(id);
+    public ResponseList<DCategory> getPage(int pagesize, String cursorkey) {
+        logger.debug(" getPage limit : {} cursorkey : {}", pagesize, cursorkey);
+        return dao.getPage(pagesize, cursorkey);
     }
 }

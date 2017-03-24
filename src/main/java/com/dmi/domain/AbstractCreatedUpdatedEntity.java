@@ -1,4 +1,4 @@
-package com.dmi.cloud.datastore;
+package com.dmi.domain;
 
 import java.io.Serializable;
 import java.util.Date;

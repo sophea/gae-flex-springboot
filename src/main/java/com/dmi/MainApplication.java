@@ -17,7 +17,11 @@
 package com.dmi;
 
 import java.text.SimpleDateFormat;
+import java.util.Properties;
 
+import javax.sql.DataSource;
+
+import org.apache.commons.dbcp2.BasicDataSourceFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -59,5 +63,19 @@ public class MainApplication {
       builder.failOnUnknownProperties(false);
       builder.dateFormat(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ"));
       return builder;
+  }
+  
+  /**create database source bean*/
+  @Bean
+  public DataSource dataSource() {
+      final String propsFile = "db.properties";
+      final Properties props = new Properties();
+      try {
+          props.load(Thread.currentThread().getContextClassLoader().getResource(propsFile).openStream());
+          return BasicDataSourceFactory.createDataSource(props);
+      } catch (Exception e) {
+          System.out.println("Error :" + e.getMessage());
+      }
+      return null;
   }
 }

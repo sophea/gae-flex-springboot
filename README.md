@@ -74,6 +74,68 @@ These settings should be revisited for production use.
 [app-yaml]: https://cloud.google.com/appengine/docs/flexible/java/configuring-your-app-with-app-yaml
 [manual-scaling]: https://cloud.google.com/appengine/docs/flexible/java/configuring-your-app-with-app-yaml#manual-scaling
 
+
+## The application use google sql cloud (MySQL)
+
+1. Configure to real Google SQL Cloud : visit this https://cloud.google.com/appengine/docs/flexible/java/using-cloud-sql
+1. Add a JDBC library and the Cloud SQL MySQL Socket Factory to your application. For example, if you use Maven, you can add the dependency to the project's pom.xml:
+```
+<dependency>   <!-- http://dev.mysql.com/doc/connector-j/en/ -->
+  <groupId>mysql</groupId>
+  <artifactId>mysql-connector-java</artifactId>
+  <version>6.0.5</version>
+</dependency>
+<dependency>
+  <groupId>com.google.cloud.sql</groupId>
+  <artifactId>mysql-socket-factory-connector-j-6</artifactId>
+  <version>1.0.2</version>
+</dependency>
+```
+1. Sample connection to MySQL
+
+update connection with pom.xml
+```
+<properties>
+        <database.name>sample</database.name>
+        <sqlcloud.instance>flex-helloworld:asia-northeast1:sm-sample</sqlcloud.instance>
+        <database.username>root</database.username>
+        <database.password>azerty123</database.password>
+        <database.url>jdbc:mysql://google/${database.name}?cloudSqlInstance=${sqlcloud.instance}&amp;socketFactory=com.google.cloud.sql.mysql.SocketFactory</database.url>
+      </properties>
+      
+```
+```
+Datasource : MainApplication.java
+
+ @Bean
+  public DataSource dataSource() {
+      final String propsFile = "db.properties";
+      final Properties props = new Properties();
+      try {
+          props.load(Thread.currentThread().getContextClassLoader().getResource(propsFile).openStream());
+          return BasicDataSourceFactory.createDataSource(props);
+      } catch (Exception e) {
+          System.out.println("Error :" + e.getMessage());
+      }
+      return null;
+  }
+  
+  //CaegoryDaoImp.java
+  
+@Repository("categoryDaoImpl")
+public class CategoryDaoImpl implements CategoryDao {
+    private static final Logger LOG = LoggerFactory.getLogger(CategoryDaoImpl.class);
+    
+    private JdbcTemplate jdbcTemplate;
+    
+    @Autowired
+    public CategoryDaoImpl(DataSource dataSource) {
+        //jdbcTemplate = new JdbcTemplate(DBCP2DataSourceUtils.getDataSource());
+        jdbcTemplate = new JdbcTemplate(dataSource);
+    }
+    ...
+    }
+```
 ## Run the application locally
 
 1. Set the correct Cloud SDK project via `gcloud config set project
@@ -83,11 +145,9 @@ These settings should be revisited for production use.
 1. Visit http://localhost:8080/api/categories/v1/all
 1. Visit http://localhost:8080/api/categories/v1/{id}
 
-
-
 ## Deploy to App Engine flexible environment
 
-1. `mvn appengine:deploy`
+1. `mvn appengine:deploy -Ptest`
 1. Visit `http://YOUR_PROJECT.appspot.com`.
 
 Note that deployment to the App Engine flexible environment requires the new

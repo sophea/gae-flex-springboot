@@ -66,17 +66,17 @@
   <classpathentry kind="var" path="M2_REPO/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/httpcomponents/httpclient/4.0.1/httpclient-4.0.1.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/httpcomponents/httpcore/4.0.1/httpcore-4.0.1.jar"/>
-  <classpathentry kind="var" path="M2_REPO/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar" sourcepath="M2_REPO/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/commons-logging/commons-logging/1.2/commons-logging-1.2.jar" sourcepath="M2_REPO/commons-logging/commons-logging/1.2/commons-logging-1.2-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/commons-codec/commons-codec/1.8/commons-codec-1.8.jar" sourcepath="M2_REPO/commons-codec/commons-codec/1.8/commons-codec-1.8-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/google/http-client/google-http-client-jackson2/1.19.0/google-http-client-jackson2-1.19.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/google/http-client/google-http-client-jackson2/1.22.0/google-http-client-jackson2-1.22.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/google/guava/guava/19.0/guava-19.0.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/google/oauth-client/google-oauth-client/1.21.0/google-oauth-client-1.21.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/google/oauth-client/google-oauth-client/1.22.0/google-oauth-client-1.22.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/google/api-client/google-api-client-appengine/1.21.0/google-api-client-appengine-1.21.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/google/oauth-client/google-oauth-client-appengine/1.21.0/google-oauth-client-appengine-1.21.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/google/http-client/google-http-client-appengine/1.21.0/google-http-client-appengine-1.21.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/google/oauth-client/google-oauth-client-servlet/1.21.0/google-oauth-client-servlet-1.21.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/google/http-client/google-http-client-jdo/1.21.0/google-http-client-jdo-1.21.0.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/google/api-client/google-api-client/1.20.0/google-api-client-1.20.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/google/api-client/google-api-client/1.22.0/google-api-client-1.22.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/google/api-client/google-api-client-servlet/1.21.0/google-api-client-servlet-1.21.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/google/http-client/google-http-client-jackson/1.21.0/google-http-client-jackson-1.21.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/codehaus/jackson/jackson-core-asl/1.9.11/jackson-core-asl-1.9.11.jar"/>
@@ -111,6 +111,11 @@
   <classpathentry kind="var" path="M2_REPO/com/google/cloud/datastore/datastore-v1-protos/1.3.0/datastore-v1-protos-1.3.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/google/cloud/datastore/datastore-v1-proto-client/1.3.0/datastore-v1-proto-client-1.3.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/google/http-client/google-http-client-protobuf/1.20.0/google-http-client-protobuf-1.20.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-jdbc/4.3.6.RELEASE/spring-jdbc-4.3.6.RELEASE.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-tx/4.3.6.RELEASE/spring-tx-4.3.6.RELEASE.jar"/>
+  <classpathentry kind="var" path="M2_REPO/mysql/mysql-connector-java/6.0.5/mysql-connector-java-6.0.5.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/commons/commons-dbcp2/2.1.1/commons-dbcp2-2.1.1.jar" sourcepath="M2_REPO/org/apache/commons/commons-dbcp2/2.1.1/commons-dbcp2-2.1.1-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/commons/commons-pool2/2.4.2/commons-pool2-2.4.2.jar" sourcepath="M2_REPO/org/apache/commons/commons-pool2/2.4.2/commons-pool2-2.4.2-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/boot/spring-boot-starter-jetty/1.4.4.RELEASE/spring-boot-starter-jetty-1.4.4.RELEASE.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/jetty-servlets/9.3.16.v20170120/jetty-servlets-9.3.16.v20170120.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/jetty-continuation/9.3.16.v20170120/jetty-continuation-9.3.16.v20170120.jar"/>
@@ -138,4 +143,8 @@
   <classpathentry kind="var" path="M2_REPO/org/apache/geronimo/specs/geronimo-jta_1.1_spec/1.1.1/geronimo-jta_1.1_spec-1.1.1.jar" sourcepath="M2_REPO/org/apache/geronimo/specs/geronimo-jta_1.1_spec/1.1.1/geronimo-jta_1.1_spec-1.1.1-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/cglib/cglib/2.2.2/cglib-2.2.2.jar" sourcepath="M2_REPO/cglib/cglib/2.2.2/cglib-2.2.2-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/asm/asm/3.3.1/asm-3.3.1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/google/cloud/sql/mysql-socket-factory-connector-j-6/1.0.2/mysql-socket-factory-connector-j-6-1.0.2.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/google/cloud/sql/mysql-socket-factory-core/1.0.2/mysql-socket-factory-core-1.0.2.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/google/apis/google-api-services-sqladmin/v1beta4-rev25-1.22.0/google-api-services-sqladmin-v1beta4-rev25-1.22.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/google/guava/guava-jdk5/17.0/guava-jdk5-17.0.jar"/>
 </classpath>

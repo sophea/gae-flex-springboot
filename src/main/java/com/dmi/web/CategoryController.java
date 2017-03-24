@@ -48,7 +48,7 @@ public class CategoryController {
     public Collection<DCategory> getDCategories() {
         logger.debug("====get all categories====");
         logger.info("this is get all categories api /api/categories/v1/all=====");
-        return service.getAll();
+        return service.list();
     }
     
     @GetMapping("/v1")
@@ -56,7 +56,7 @@ public class CategoryController {
     public ResponseList<DCategory> getPage(@RequestParam(value="pagesize", defaultValue="10") int pagesize,
             @RequestParam(value = "cursorkey", required = false) String cursorkey) {
         logger.debug("====get page {} , {} ====", pagesize, cursorkey);
-        return service.findPage(cursorkey, pagesize);
+        return service.getPage(pagesize, cursorkey);
     }
 
     //@RequestMapping(value = "/v1/{id}", method = RequestMethod.GET)
@@ -65,7 +65,7 @@ public class CategoryController {
 
         logger.debug("====get category detail with id :[{}] ====", id);
         
-        final DCategory category = service.findById(id);
+        final DCategory category = service.get(id);
 
         return category;
     }
@@ -83,7 +83,7 @@ public class CategoryController {
     @DeleteMapping("/v1/{id}")
     public ResponseEntity deleteDCategory(@PathVariable Long id) {
         logger.debug("====delete category detail with id :[{}] ====", id);
-        service.remove(id);
+        service.delete(id);
         return new ResponseEntity<>(id, HttpStatus.OK);
 
     }
@@ -91,7 +91,7 @@ public class CategoryController {
     @PutMapping("/v1/{id}")
     public ResponseEntity updateDCategory(@PathVariable Long id, @RequestBody DCategory category) {
         logger.debug("====update category detail with id :[{}] ====", id);
-        category = service.update(category);
+        category = service.update(id, category);
 
         if (null == category) {
             return new ResponseEntity("No DCategory found for ID " + id, HttpStatus.NOT_FOUND);
@@ -102,7 +102,7 @@ public class CategoryController {
     @PostMapping("/v1/{id}/json")
     public ResponseEntity updateByJson(@PathVariable Long id, @RequestBody DCategory category) {
         logger.debug("====update category detail with id :[{}] ====", id);
-        category = service.update(category);
+        category = service.update(id, category);
 
         if (null == category) {
             return new ResponseEntity("No DCategory found for ID " + id, HttpStatus.NOT_FOUND);
@@ -149,7 +149,7 @@ public class CategoryController {
         columns.put("createdDate", "datetime");
         
         body.put("columns", columns);
-        body.put("tableName", "DCategory");
+        body.put("tableName", "category");
         body.put("primaryKeyName", "id");
         body.put("primaryKeyType", "long");
         

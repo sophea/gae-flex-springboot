@@ -1,4 +1,4 @@
-# Spring Boot based sample backend app running GAE Flex environment
+# Spring Boot based sample backend app running GAE Flex environment using Google SqlCloud
 
 This sample shows how to run a [Spring Boot][spring-boot] application on [Google
 Cloud Platform][cloud-java]. It uses the [Google App Engine flexible
@@ -99,7 +99,7 @@ update connection with pom.xml
         <database.name>sample</database.name>
         <sqlcloud.instance>flex-helloworld:asia-northeast1:sm-sample</sqlcloud.instance>
         <database.username>root</database.username>
-        <database.password>azerty123</database.password>
+        <database.password>root123</database.password>
         <database.url>jdbc:mysql://google/${database.name}?cloudSqlInstance=${sqlcloud.instance}&amp;socketFactory=com.google.cloud.sql.mysql.SocketFactory</database.url>
       </properties>
       

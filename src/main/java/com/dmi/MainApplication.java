@@ -32,10 +32,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @RestController
 @ComponentScan(basePackages = {"com.dmi.web", "com.dmi.service", "com.dmi.dao"})
 public class MainApplication {
-  @RequestMapping("/")
-  public String home() {
-    return "Hello World!";
-  }
+//  @RequestMapping("/")
+//  public String home() {
+//    return "Hello World!";
+//  }
 
   /**
    * <a href="https://cloud.google.com/appengine/docs/flexible/java/how-instances-are-managed#health_checking">

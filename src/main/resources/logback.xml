@@ -10,7 +10,7 @@
 		</encoder>
 	</appender>
 
-	<logger name="com" level="info" />
+	<logger name="com" level="all" />
 	<logger name="org.springframework" level="info" />
 
 	<root level="warn">

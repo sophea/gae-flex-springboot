@@ -1,19 +1,19 @@
 package com.dmi.cloud.datastore;
 
 
-
 /**
- *
- * @author os
+ * @author Sophea <a href='mailto:smak@dminc.com'> sophea </a>
+ * @version $id$ - $Revision$
+ * @date 2017
  */
 public abstract class AbstractLongEntity extends AbstractCreatedUpdatedEntity {
-    
+
     /**
      * 
      */
     private static final long serialVersionUID = -91940750750388101L;
     private Long id;
-    
+
     public AbstractLongEntity() {
     }
 
@@ -34,5 +34,5 @@ public abstract class AbstractLongEntity extends AbstractCreatedUpdatedEntity {
         return String.format("id:%d", id);
     }
 
-    
+
 }

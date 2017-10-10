@@ -10,10 +10,14 @@ import com.google.cloud.datastore.FullEntity.Builder;
 import com.google.cloud.datastore.IncompleteKey;
 import com.google.cloud.datastore.StructuredQuery.CompositeFilter;
 import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
-
+/**
+ * @author Sophea <a href='mailto:sopheamak@gmail.com'> sophea </a>
+ * @version $id$ - $Revision$
+ * @date 2017
+ */
 @Repository("categoryDao")
 public class CategoryDaoImpl extends DaoGaeImpl<DCategory> {
-    
+
     public static final String COLUMN_NAME_NAME = "name";
     public static final String COLUMN_NAME_DESCRIPTION = "description";
     public CategoryDaoImpl() {
@@ -40,14 +44,14 @@ public class CategoryDaoImpl extends DaoGaeImpl<DCategory> {
         to.set(COLUMN_NAME_DESCRIPTION, from.getDescription());
         to.set(DCategory.COLUMN_NAME_CREATEDDATE, com.google.cloud.datastore.DateTime.copyFrom(new Date()));
     }
-    
+
     @Override
     public CompositeFilter convertToFilter(DCategory cat) {
         if (cat == null) {
             return null;
         }
         CompositeFilter compositeFilter = null;
-        
+
         PropertyFilter f = null;
         if (cat.getName() != null) {
             f = PropertyFilter.eq(COLUMN_NAME_NAME, cat.getName());
@@ -55,10 +59,10 @@ public class CategoryDaoImpl extends DaoGaeImpl<DCategory> {
         }
         if (cat.getDescription() !=null) {
             compositeFilter = CompositeFilter.and(f, PropertyFilter.eq(COLUMN_NAME_DESCRIPTION, cat.getDescription()));
-            
+
         }
         LOG.debug("filter {}" ,compositeFilter);
-        
+
         return compositeFilter;
     }
 
